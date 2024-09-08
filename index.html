@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Web de Recetas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Menú de navegación fijo -->
+    <nav class="navbar">
+        <h1>Chef’s Collection</h1>
+        <ul>
+            <li><a href="#" onclick="filtrarCategoria('')">Todas</a></li>
+            <li><a href="#" onclick="filtrarCategoria('entrada')">Entradas</a></li>
+            <li><a href="#" onclick="filtrarCategoria('plato fuerte')">Platos Fuertes</a></li>
+            <li><a href="#" onclick="filtrarCategoria('postre')">Postres</a></li>
+            <li><a href="#" onclick="filtrarCategoria('bebida')">Bebidas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Buscar receta..." onkeyup="filtrarRecetas()">
+    </div>
+
+    <!-- Contenedor de recetas -->
+    <div class="recipe-container">
+        <!-- Entradas -->
+        <div class="recipe-card" data-category="entrada">
+            <img src="img/ensalada caprese.jpg" alt="Ensalada Caprese">
+            <div class="recipe-info">
+                <h3>Ensalada Caprese</h3>
+                <p>Tomate fresco, mozzarella y albahaca con aceite de oliva y reducción de balsámico.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Tomate, mozzarella, albahaca, aceite de oliva.</p>
+                <p><strong>Pasos:</strong> Cortar los ingredientes, mezclar y servir frío.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="entrada">
+            <img src="img/ceviche de camaronesjpg.jpg" alt="Ceviche de Camarones">
+            <div class="recipe-info">
+                <h3>Ceviche de Camarones</h3>
+                <p>Camarones marinados en limón, cilantro, cebolla morada y un toque de chile.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Camarones, cebolla morada, cilantro, limón, chile.</p>
+                <p><strong>Pasos:</strong> Marinar los camarones en jugo de limón, mezclar con los demás ingredientes.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="entrada">
+            <img src="img/bruschetta.jpg" alt="Bruschetta de Tomate y Albahaca">
+            <div class="recipe-info">
+                <h3>Bruschetta de Tomate y Albahaca</h3>
+                <p>Rebanadas de pan crujiente con tomate, ajo y albahaca, rociadas con aceite de oliva.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Pan, tomate, ajo, albahaca, aceite de oliva.</p>
+                <p><strong>Pasos:</strong> Tostar el pan, frotar con ajo y agregar la mezcla de tomate y albahaca.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="entrada">
+            <img src="img/tartar de atun.jpg" alt="Tartare de Atún">
+            <div class="recipe-info">
+                <h3>Tartare de Atún</h3>
+                <p>Dados de atún fresco marinados con salsa de soja, jengibre y sésamo.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Atún, salsa de soja, jengibre, sésamo.</p>
+                <p><strong>Pasos:</strong> Cortar el atún en dados pequeños y mezclar con los demás ingredientes.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="entrada">
+            <img src="img/gazpacho andaluz.jpg" alt="Gazpacho Andaluz">
+            <div class="recipe-info">
+                <h3>Gazpacho Andaluz</h3>
+                <p>Sopa fría de tomate con pepino, pimiento y aceite de oliva extra virgen.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Tomate, pepino, pimiento, aceite de oliva.</p>
+                <p><strong>Pasos:</strong> Licuar los ingredientes y refrigerar antes de servir.</p>
+            </div>
+        </div>
+
+        <!-- Platos Fuertes -->
+        <div class="recipe-card" data-category="plato fuerte">
+            <img src="img/filete mignon.jpg" alt="Filete Mignon">
+            <div class="recipe-info">
+                <h3>Filete Mignon</h3>
+                <p>Jugoso filete con reducción de vino tinto.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Filete de res, vino tinto, ajo, mantequilla.</p>
+                <p><strong>Pasos:</strong> Cocinar el filete al punto deseado, reducir el vino con ajo.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="plato fuerte">
+            <img src="img/salmon a la parrilla.jpg" alt="Salmón a la Parrilla con Miel y Mostaza">
+            <div class="recipe-info">
+                <h3>Salmón a la Parrilla con Miel y Mostaza</h3>
+                <p>Salmón a la parrilla con una mezcla dulce de miel y mostaza Dijon.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Salmón, miel, mostaza Dijon.</p>
+                <p><strong>Pasos:</strong> Mezclar miel y mostaza, marinar el salmón y asar a la parrilla.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="plato fuerte">
+            <img src="img/Risotto de hongos.jpg" alt="Risotto de Hongos">
+            <div class="recipe-info">
+                <h3>Risotto de Hongos</h3>
+                <p>Cremoso risotto con hongos porcini y parmesano rallado.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Arroz arborio, hongos, parmesano.</p>
+                <p><strong>Pasos:</strong> Cocinar el arroz con caldo y agregar hongos salteados y parmesano.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="plato fuerte">
+            <img src="img/pollo al curry.jpg" alt="Pollo al Curry con Coco">
+            <div class="recipe-info">
+                <h3>Pollo al Curry con Coco</h3>
+                <p>Pollo en una salsa cremosa de curry y leche de coco, servido con arroz basmati.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Pollo, curry, leche de coco, arroz basmati.</p>
+                <p><strong>Pasos:</strong> Saltear el pollo y cocinarlo en la salsa de curry y coco.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="plato fuerte">
+            <img src="img/pato a la naranja.jpg" alt="Pato a la Naranja">
+            <div class="recipe-info">
+                <h3>Pato a la Naranja</h3>
+                <p>Pechuga de pato asada con salsa agridulce de naranja y especias.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Pato, naranjas, especias.</p>
+                <p><strong>Pasos:</strong> Asar el pato y preparar la salsa de naranja con las especias.</p>
+            </div>
+        </div>
+
+        <!-- Postres -->
+        <div class="recipe-card" data-category="postre">
+            <img src="img/cheesecake.jpg" alt="Cheesecake de Frutos Rojos">
+            <div class="recipe-info">
+                <h3>Cheesecake de Frutos Rojos</h3>
+                <p>Tarta de queso cremosa con salsa de frutos rojos frescos.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Queso crema, frutos rojos, galletas.</p>
+                <p><strong>Pasos:</strong> Hornear la base y el relleno, añadir la salsa de frutos rojos.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="postre">
+            <img src="img/tiramisu.jpg" alt="Tiramisú">
+            <div class="recipe-info">
+                <h3>Tiramisú</h3>
+                <p>Postre italiano de capas de bizcocho empapado en café y crema de mascarpone.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Mascarpone, café, bizcocho, cacao.</p>
+                <p><strong>Pasos:</strong> Montar capas de bizcocho y crema, refrigerar y espolvorear con cacao.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="postre">
+            <img src="img/Creme brulee.jpg" alt="Crème Brûlée">
+            <div class="recipe-info">
+                <h3>Crème Brûlée</h3>
+                <p>Postre francés de crema con una costra crujiente de azúcar caramelizado.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Crema, azúcar, vainilla.</p>
+                <p><strong>Pasos:</strong> Hornear la crema y caramelizar el azúcar en la superficie.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="postre">
+            <img src="img/sufle de chocolate.jpg" alt="Suflé de Chocolate">
+            <div class="recipe-info">
+                <h3>Suflé de Chocolate</h3>
+                <p>Suflé ligero y esponjoso con un intenso sabor a chocolate.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Chocolate, huevo, azúcar.</p>
+                <p><strong>Pasos:</strong> Batir las claras y mezclarlas con chocolate fundido, hornear.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="postre">
+            <img src="img/torta de limon.jpg" alt="Tarta de Limón">
+            <div class="recipe-info">
+                <h3>Tarta de Limón</h3>
+                <p>Tarta dulce con crema de limón y base de galleta.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Limón, leche condensada, galletas.</p>
+                <p><strong>Pasos:</strong> Preparar la base, mezclar la crema de limón y hornear.</p>
+            </div>
+        </div>
+
+        <!-- Bebidas -->
+        <div class="recipe-card" data-category="bebida">
+            <img src="img/smothie mango coco.jpg" alt="Smoothie de Mango y Coco">
+            <div class="recipe-info">
+                <h3>Smoothie de Mango y Coco</h3>
+                <p>Refrescante smoothie con mango fresco y leche de coco, endulzado con miel.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Mango, leche de coco, miel, hielo.</p>
+                <p><strong>Pasos:</strong> Licuar el mango con la leche de coco, miel y hielo. Servir frío.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="bebida">
+            <img src="img/smothie verde.jpg" alt="Smoothie Verde Detox">
+            <div class="recipe-info">
+                <h3>Smoothie Verde Detox</h3>
+                <p>Delicioso y nutritivo smoothie con espinaca, pepino, manzana verde y jengibre.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Espinaca, pepino, manzana verde, jengibre, agua de coco.</p>
+                <p><strong>Pasos:</strong> Mezclar todos los ingredientes en la licuadora hasta obtener una mezcla suave.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="bebida">
+            <img src="img/smothie fresa banano.jpg" alt="Smoothie de Fresa y Plátano">
+            <div class="recipe-info">
+                <h3>Smoothie de Fresa y Plátano</h3>
+                <p>Clásico smoothie de fresas frescas y plátano, ideal para un desayuno ligero.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Fresas, plátano, yogur natural, miel.</p>
+                <p><strong>Pasos:</strong> Licuar las fresas y el plátano con el yogur y miel. Servir al instante.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="bebida">
+            <img src="img/licuado piña naranja.jpg" alt="Licuado Tropical de Piña y Naranja">
+            <div class="recipe-info">
+                <h3>Licuado Tropical de Piña y Naranja</h3>
+                <p>Licuado refrescante con piña, naranja y un toque de leche de almendra.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Piña, jugo de naranja, leche de almendra, hielo.</p>
+                <p><strong>Pasos:</strong> Licuar todos los ingredientes y servir bien frío.</p>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-category="bebida">
+            <img src="img/smothie arandanos.jpg" alt="Smoothie de Arándanos y Chía">
+            <div class="recipe-info">
+                <h3>Smoothie de Arándanos y Chía</h3>
+                <p>Antioxidante smoothie de arándanos con semillas de chía y yogur griego.</p>
+            </div>
+            <div class="recipe-details">
+                <p><strong>Ingredientes:</strong> Arándanos, yogur griego, semillas de chía, leche de almendra.</p>
+                <p><strong>Pasos:</strong> Licuar los arándanos con yogur, leche de almendra y chía. Refrigerar antes de servir.</p>
+            </div>
+        </div>
+
+    <script src="codigo.js"></script>
+</body>
+</html>
